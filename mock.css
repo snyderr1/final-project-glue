@@ -8,6 +8,27 @@ header{
   z-index : 100;
   margin-top: 0;
 }
+
+.navlist{
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.navlist button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+.navlist button:hover {
+  background-color: #ddd;
+}
+
 body{
   width: 100%;
   height: 100%;
@@ -66,3 +87,5 @@ h1{
   z-index:0;
 
 }
+
+
