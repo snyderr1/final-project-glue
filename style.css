@@ -1,0 +1,130 @@
+html{
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  width: 100%;
+  z-index : 100;
+  margin-top: 0;
+}
+
+body{
+    background-image: linear-gradient(rgb(25, 10, 40), rgb(255, 160, 215)) ;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index : 100;
+}
+
+h1{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    position: fixed;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Baloo Bhai', sans-serif;
+    font-size: 30px;
+}
+
+@keyframes fadeIn{
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
+
+#site-title{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 200px;
+  color: white;
+  font-family: 'Baloo Bhai', sans-serif;
+  animation: fadeIn;
+  animation-duration: 6s;
+  animation-timing-function: ease;
+}
+
+@keyframes airplane{
+    from    {margin-left: -300px;}
+    to      {margin-left: 100%;}
+}
+
+.airplane {
+    margin-top: 400px;
+    animation-duration: 50s;
+    animation-name: drift;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.navlist{
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  border: 2px solid white;
+  background-color: rgb(100, 100, 100);
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 100px;
+  border-radius: 5px;
+  bottom: 50px;
+
+}
+
+.navlist .navitem {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding-top: 25px;
+  width: 25%;
+  text-align: center;
+  margin-left: 0px;
+  animation: fadeIn;
+  animation-duration: 6s;
+  animation-timing-function: ease;
+  font-size: 100%;
+
+}
+
+.navlist .navitem:hover {
+  background-color: rgb(30, 240, 170);
+  width: 30%;
+  transition: .5s;
+}
+
+.statement {
+    animation: fadeIn;
+    animation-duration: 6s;
+    animation-timing-function: ease;
+    color: white;
+    font-family: 'Baloo Bhai', sans-serif;
+    text-align: center;
+
+}
+
+.bottom_img {
+    margin-top: 1000px;
+    width: 100%;
+    margin-bottom: -10px;
+}
+
+
