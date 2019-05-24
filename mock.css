@@ -52,8 +52,6 @@ li a {
   text-align: center;
   margin: 0;
   padding: 0;
-  /* height: 100%;
-  width: 100%; */
   font-size: 200px;
   color: white;
   font-family: 'Baloo Bhai', sans-serif;
@@ -96,7 +94,7 @@ li a {
   border: none;
   outline: none;
   cursor: pointer;
-  padding-top: 22px;
+  padding-top: 25px;
   width: 25%;
   text-align: center;
   margin-left: 0px;
@@ -111,6 +109,16 @@ li a {
   background-color: rgb(30, 240, 170);
   width: 30%;
   transition: .5s;
+}
+
+.statement {
+    animation: fadeIn;
+    animation-duration: 6s;
+    animation-timing-function: ease;
+    color: white;
+    font-family: 'Baloo Bhai', sans-serif;
+    text-align: center;
+
 }
 
 .bottom_img {
