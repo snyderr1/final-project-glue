@@ -10,7 +10,7 @@ header{
 }
 
 body{
-    background-image: linear-gradient(rgb(50, 50, 50), rgb(158, 207, 234)) ;
+    background-image: linear-gradient(rgb(25, 10, 40), rgb(255, 160, 215)) ;
 }
 
 body{
@@ -80,7 +80,7 @@ li a {
   display: flex;
   justify-content: center;
   border: 2px solid white;
-  background-color: rgb(50, 50, 50);
+  background-color: rgb(100, 100, 100);
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
