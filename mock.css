@@ -49,8 +49,9 @@ li a {
     display: block;
     width: 220px;
     text-decoration: none;
-    color: rgb(230, 187, 118);
+    color: white;
     font-family: 'Baloo Bhai', cursive;
+    font-size: 30px;
 
 }
 
