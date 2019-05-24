@@ -12,7 +12,7 @@ header{
 }
 
 body{
-    background-color: rgb(50, 50, 50);
+    background-image: linear-gradient(rgb(50, 50, 50), rgb(158, 207, 234)) ;
 
 }
 
@@ -62,6 +62,12 @@ li a {
   width: 100%; */
   font-size: 200px;
   color: rgb(209, 199, 194);
+}
+
+.cloud img{
+    width: 300px;
+    height: 200px;
+
 }
 
 .navlist{
