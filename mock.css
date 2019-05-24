@@ -66,9 +66,9 @@ li a {
   color: rgb(209, 199, 194);
 }
 
-@keyframes drift{
-    from    {left: 0;}
-    to      {left: 50%;}
+@keyframes airplane{
+    from    {margin-left: -300px;}
+    to      {margin-left: 100%;}
 }
 
 .cloud img{
@@ -78,8 +78,12 @@ li a {
 
 }
 
-.cloud {
-    animation: drift 5s;
+.airplane {
+    margin-top: 400px;
+    animation-duration: 50s;
+    animation-name: drift;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 .navlist{
@@ -104,7 +108,7 @@ li a {
 }
 
 .navlist .navitem:hover {
-  background-color: grey;
+  background-color: white;
 }
 
 .bottom_img {
