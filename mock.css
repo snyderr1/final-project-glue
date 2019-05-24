@@ -7,7 +7,7 @@ header{
   width: 100%;
   z-index : 100;
   margin-top: 0;
-  font-family: 'Baloo Bhai', cursive;
+
 
 }
 
@@ -39,23 +39,24 @@ ul {
     width: 120px;
     text-decoration: none;
     position: fixed;
-    left: 20px;
     top: 40px;
 
 
 }
 
 li a {
-    display: block;
-    width: 220px;
+
     text-decoration: none;
     color: white;
-    font-family: 'Baloo Bhai', cursive;
+    font-family: 'Baloo Bhai', sans-serif;
     font-size: 30px;
 
 }
 
-
+@keyframes fadeIn{
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
 
 #site-title{
   text-align: center;
@@ -64,19 +65,16 @@ li a {
   /* height: 100%;
   width: 100%; */
   font-size: 200px;
-  color: rgb(209, 199, 194);
+  color: white;
+  font-family: 'Baloo Bhai', sans-serif;
+  animation: fadeIn;
+  animation-duration: 6s;
+  animation-timing-function: ease;
 }
 
 @keyframes airplane{
     from    {margin-left: -300px;}
     to      {margin-left: 100%;}
-}
-
-.cloud img{
-    width: 300px;
-    height: 200px;
-
-
 }
 
 .airplane {
@@ -89,11 +87,15 @@ li a {
 
 .navlist{
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: rgb(210, 200, 190);
-  width: 200px;
-  height: 600px;
+  display: inline-block;
+  border: 2px solid white;
+  background-color: rgb(50, 50, 50);
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 100px;
   border-radius: 10px;
+  margin-top: 40%;
 
 }
 
@@ -103,17 +105,24 @@ li a {
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
+  padding: inherit;
+  width: 200px;
+  text-align: center;
+  margin-left: 0px;
+  animation: fadeIn;
+  animation-duration: 6s;
+  animation-timing-function: ease;
+  font-size: 100%;
 
 }
 
 .navlist .navitem:hover {
   background-color: rgb(30, 240, 170);
+  transition: 1s;
 }
 
 .bottom_img {
-    margin-top: 1200px;
+    margin-top: 1000px;
     width: 100%;
     margin-bottom: -10px;
 }
