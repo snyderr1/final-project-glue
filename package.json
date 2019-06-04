@@ -1,0 +1,28 @@
+{
+  "name": "final-project-glue",
+  "version": "1.0.0",
+  "description": "Hold Your life together",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "prestart": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs290-sp19/final-project-glue.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/osu-cs290-sp19/final-project-glue/issues"
+  },
+  "homepage": "https://github.com/osu-cs290-sp19/final-project-glue",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.1.2",
+    "node": "^12.3.1"
+  },
+  "devDependencies": {}
+}
