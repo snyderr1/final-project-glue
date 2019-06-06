@@ -18,7 +18,7 @@ app.get('/goals', function(req, res){
 
 });
 
-app.get('/home', function(req, res){
+app.get(['/home', '/'], function(req, res){
 
   res.status(200).render('home', {title: "glue"});
 
