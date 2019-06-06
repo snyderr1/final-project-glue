@@ -7,11 +7,32 @@ var app = express();
 
 var port = (process.env.PORT || 3000);
 
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
 app.use(express.static('public'));
 
-app.get('/', function(req, res){
+app.get('/goals', function(req, res){
 
-  res.status(200).sendFile("public/index.html");
+  res.status(200).render('goalContainer', {title: "goals"});
+
+});
+
+app.get('/home', function(req, res){
+
+  res.status(200).render('home', {title: "glue"});
+
+});
+
+app.get('/calendar', function(req, res){
+
+  res.status(200).render('calendar', {title: "calendar"});
+
+});
+
+app.get('/to-do', function(req, res){
+
+  res.status(200).render('to-do', {title: "to-do"});
 
 });
 
