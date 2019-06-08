@@ -10,6 +10,13 @@ var port = (process.env.PORT || 3000);
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+
+app.get(['/home', '/'], function(req, res){
+  console.log('check get');
+  res.status(200).render('home', {title: "glue"});
+
+});
+
 app.use(express.static('public'));
 
 app.get('/goals', function(req, res){
@@ -18,11 +25,6 @@ app.get('/goals', function(req, res){
 
 });
 
-app.get(['/home', '/'], function(req, res){
-
-  res.status(200).render('home', {title: "glue"});
-
-});
 
 app.get('/calendar', function(req, res){
 
