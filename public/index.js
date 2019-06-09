@@ -11,9 +11,14 @@ modalCloseButton.addEventListener('click', closeModal);
 modalCancelButton.addEventListener('click', closeModal);
 modalCreateButton.addEventListener('click', createNewGoal);
 
+for(var i = 0; i < goals.length; i++) {
+	goals[i].addEventListener('click', openModal);
+}
+
 function openModal() {
 	modalBackdrop.style.display = 'block';
 	modal.style.display = 'block';
+	console.log(goals[0].goalDate.value);
 }
 
 function closeModal() {
@@ -37,6 +42,7 @@ function createNewGoal() {
 }
 
 function noInputAlert() {
+	console.log(goals.length);
 	alert("Please enter all the necessary information before creating a goal");
 }
 //new twit functions//
