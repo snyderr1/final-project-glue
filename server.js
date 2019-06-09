@@ -7,6 +7,8 @@ var app = express();
 
 var port = (process.env.PORT || 3000);
 
+var goalsData = require('./goalData');
+
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
@@ -19,10 +21,12 @@ app.get(['/home', '/'], function(req, res){
 
 app.use(express.static('public'));
 
-app.get('/goals', function(req, res){
-
-  res.status(200).render('goalContainer', {title: "goals"});
-
+app.get('/goals', function(req, res) {
+  res.status(200).render('goalContainer', {
+    title: "goals",
+    goals: goalsData
+  });
+  console.log(goalsData);
 });
 
 

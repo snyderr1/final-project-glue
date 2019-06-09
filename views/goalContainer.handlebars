@@ -1,6 +1,7 @@
 <main class = "goals-container">
-  {{>goals}}
-
+  {{#each goals}}
+    {{>goals}}
+  {{/each}}
 </main>
 
 <button type="button" id="create-goal-button">goal</button>
