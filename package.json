@@ -6,11 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-<<<<<<< HEAD
     "build": "handlebars views/partials/ -f public/partials.js",
-=======
-    "build": "handlebars views/partials/goals.handlebars -f public/goalTemplate.js",
->>>>>>> 6fec651edb1b36aa7416c5f80a3c3f675c395072
     "prestart": "npm run build"
   },
   "repository": {
