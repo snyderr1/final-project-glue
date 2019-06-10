@@ -120,7 +120,7 @@ a {
 
 .statement {
     animation: fadeIn;
-    animation-duration: 4s;
+    animation-duration: 1s;
     animation-timing-function: ease;
     color: white;
     font-family: 'Baloo Bhai', sans-serif;
@@ -129,6 +129,7 @@ a {
 }
 
 .goals-container {
+    justify-content: center;
   margin: 50px 10%;
   display: flex;
   flex-wrap: wrap;
@@ -147,7 +148,7 @@ a {
   border: 1px;
   border-radius: 25px;
   animation: fadeIn;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-timing-function: ease;
 
 }
@@ -190,6 +191,18 @@ a {
   font-weight: bold;
 }
 
+.goal-content p{
+    font-size: 20px;
+    color: rgb(100, 100, 100);
+}
+
+.goal-date a{
+    font-size: 15px;
+    color: white;
+}
+
+
+
 .cloud {
     animation: drift;
     animation-duration: 40s;
@@ -211,10 +224,11 @@ a {
 #create-goal-button {
   font-family: 'Baloo Bhai', sans-serif;
   position: fixed;
-  right: 47%;
+  right: 10%;
+
   bottom: 30px;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   border: none;
   border-radius: 30px;
   font-size: 50px;
@@ -227,10 +241,11 @@ a {
 #create-goal-button:hover,
 #create-goal-button:focus {
   align: center;
-  right: 46.25%;
+
   bottom: 22px;
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
+  right: 9%;
   border-radius: 33px;
   font-size: 70px;
   background-color: rgb(30, 240, 170);
@@ -389,15 +404,17 @@ a {
 
 .bottom-calendar {
 
-  height: 900px;
+  height: 90%;
   display: flex;
-  width: 1200px;
-  border: 2px solid white;
+  justify-content: center;
+  width: 1000px;
+  height: 900px;
+
   margin: auto;
   margin-top: 30px;
   margin-bottom: 30px;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0);
   flex-wrap: wrap;
 
 }
@@ -406,14 +423,17 @@ a {
 
 
 .day {
-  width: 167px;
-  height: 147px;
+  display: flex;
+  width: 12%;
+  height: 16%;
+
+  margin: 5px;
   border: 2px solid white;
   border-radius: 5px;
-  background-color: rgba(50, 0, 0, 0.85);
-
-
-
-
-
+  background-color: rgba(100, 100, 100, 1);
+  font-family: 'Baloo Bhai', sans-serif;
+  color: white;
+  animation: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease;
 }
