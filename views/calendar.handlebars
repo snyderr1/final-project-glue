@@ -1,8 +1,7 @@
 <main>
   <div class = "bottom-calendar">
-    <!-- Basic embedded calendar: just a link to a public calendar I made. Will probably need to find a way to create individual calendars. -->
-      {{#each this}}
-        {{>day}}
-      {{/each}}
+        {{#if this.date}}
+          {{>day}}
+        {{/if}}
   </div>
 </main>
