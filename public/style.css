@@ -81,7 +81,7 @@ a {
 }
 
 .navlist{
-    z-index: 101;
+  z-index: 101;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -103,19 +103,18 @@ a {
   outline: none;
   cursor: pointer;
   padding-top: 25px;
-  width: 25%;
+  width: 33.33%;
   text-align: center;
   margin-left: 0px;
   animation: fadeIn;
   animation-duration: 4s;
   animation-timing-function: ease;
-  font-size: 100%;
 
 }
 
 .navlist .navitem:hover {
   background-color: rgb(30, 240, 170);
-  width: 30%;
+  width: 40%;
   transition: .5s;
 }
 
@@ -137,9 +136,12 @@ a {
 
 .goal {
   background-color: rgba(255, 255, 255, 0.3);
-  flex: 0 1 28%;
+  align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  flex: 0 1 100%;
   display: flex;
-  margin: 10px;
+  margin-bottom: 15px;
   padding: 20px;
   height: 10%;
   border: 1px;
@@ -147,10 +149,14 @@ a {
   animation: fadeIn;
   animation-duration: 2s;
   animation-timing-function: ease;
+
 }
 
 .goal:hover {
   background-color: rgb(30, 240, 170);
+  margin-left: 20%;
+  margin-right: 20%;
+  flex: 0 1 100%;
   transition: .5s;
   transform: scale(1.1);
 }
@@ -247,12 +253,16 @@ a {
 
 #create-goal-modal {
   position: fixed;
+  font-family: 'Baloo Bhai', sans-serif;
+  animation: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 1010;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .hidden {
@@ -276,7 +286,8 @@ a {
 
 .modal-header h3 {
   margin: 0;
-  font-size: 28px;
+  font-size: 50px;
+  color: rgb(100, 100, 100);
 }
 
 .modal-close-button {
@@ -299,12 +310,14 @@ a {
   align-items: center;
   font-size: 20px;
   margin: 10px 0;
+  font-size: 40px;
+  color: rgb(100, 100, 100);
 }
 
 .goal-input-element label {
   font-weight: 600;
   flex: 1 75px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .goal-input-element input,
@@ -312,12 +325,26 @@ a {
   flex: 6 200px;
   padding: 8px;
   font-size: 20px;
-  border: 1px solid #aaa;
+  border: 1px solid rgb(100, 100, 100);
+  color: rgb(100, 100, 100);
+  min-height: 20px;
 }
 
-.goal-input-element textarea {
-  min-height: 64px;
+.goal-input-element input:focus {
+    outline-color: rgb(30, 240, 170);
 }
+
+#goal-text-input{
+    min-height: 50px;
+    align-items: center;
+    color: rgb(100, 100, 100);
+}
+
+#goal-text-input:focus {
+    outline-color: rgb(30, 240, 170);
+}
+
+
 
 .modal-footer {
   display: flex;
@@ -336,17 +363,27 @@ a {
   cursor: pointer;
 }
 
+.modal-footer .modal-cancel-button {
+    font-family: 'Baloo Bhai', sans-serif;
+    color: white;
+    background-color: rgb(100, 100, 100);
+}
+
 .modal-footer .modal-cancel-button:hover {
-  background-color: #eee;
+  color: rgb(100, 100, 100);
+  background-color: white;
+
 }
 
 .modal-footer .modal-accept-button {
-  background-color: #319df6;
-  color: #fff;
+    font-family: 'Baloo Bhai', sans-serif;
+    background-color: rgb(100, 100, 100);
+    color: white;
 }
 
 .modal-footer .modal-accept-button:hover {
-  background-color: #087dde;
+  background-color: rgb(30, 240, 170);
+
 }
 
 
@@ -357,7 +394,7 @@ a {
 }
 
 #calendar{
-  height: 300px;
+  height: 1000px;
   width: 1000px;
   padding: 50px;
 
