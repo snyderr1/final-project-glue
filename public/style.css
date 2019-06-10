@@ -3,6 +3,9 @@ html{
   padding: 0;
   height: 100%;
   background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 
 }
 
@@ -60,7 +63,7 @@ a {
   color: white;
   font-family: 'Baloo Bhai', sans-serif;
   animation: fadeIn;
-  animation-duration: 6s;
+  animation-duration: 4s;
   animation-timing-function: ease;
 }
 
@@ -104,7 +107,7 @@ a {
   text-align: center;
   margin-left: 0px;
   animation: fadeIn;
-  animation-duration: 6s;
+  animation-duration: 4s;
   animation-timing-function: ease;
   font-size: 100%;
 
@@ -118,7 +121,7 @@ a {
 
 .statement {
     animation: fadeIn;
-    animation-duration: 6s;
+    animation-duration: 4s;
     animation-timing-function: ease;
     color: white;
     font-family: 'Baloo Bhai', sans-serif;
@@ -141,7 +144,9 @@ a {
   height: 10%;
   border: 1px;
   border-radius: 25px;
-  transition: .2s ease-in-out;
+  animation: fadeIn;
+  animation-duration: 2s;
+  animation-timing-function: ease;
 }
 
 .goal:hover {
@@ -185,15 +190,15 @@ a {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     z-index: 2;
-    margin-top: -40px;
+    margin-top: 40px;
     width: 100px;
     height: 100px;
 }
 
 .bottom_img {
     z-index: 0;
+
     width: 100%;
-    margin-top: -360px;
     margin-bottom: -10px;
 }
 
