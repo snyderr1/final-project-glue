@@ -388,14 +388,32 @@ a {
 
 
 .bottom-calendar {
+
+  height: 900px;
   display: flex;
-  justify-content: center;
-  align-content: center;
+  width: 1200px;
+  border: 2px solid white;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.85);
+  flex-wrap: wrap;
+
 }
 
-#calendar{
-  
-  width: 1000px;
-  padding: 50px;
+
+
+
+.day {
+  width: 167px;
+  height: 147px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: rgba(50, 0, 0, 0.85);
+
+
+
+
 
 }

@@ -1,6 +1,7 @@
 <main>
   <div class = "bottom-calendar">
-    <!-- Basic embedded calendar: just a link to a public calendar I made. Will probably need to find a way to create individual calendars. -->
-    <iframe id="calendar" src="https://calendar.google.com/calendar/embed?src=7206thh6koaa6l5j16muahuu4g%40group.calendar.google.com&ctz=America%2FLos_Angeles" style="border: 0"  frameborder="0" scrolling="no"></iframe>
+        {{#if this.date}}
+          {{>day}}
+        {{/if}}
   </div>
 </main>
