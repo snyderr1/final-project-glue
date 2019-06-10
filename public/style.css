@@ -1,6 +1,9 @@
 html{
   margin: 0;
   padding: 0;
+  height: 100%;
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+
 }
 
 header{
@@ -10,15 +13,11 @@ header{
 }
 
 body{
-    background-image: linear-gradient(rgb(25, 10, 40), rgb(255, 160, 215)) ;
-}
-
-body{
   width: 100%;
-  height: 100%;
+
   margin: 0;
   padding: 0;
-  z-index : 100;
+  z-index : 99;
 }
 
 h1{
@@ -79,6 +78,7 @@ a {
 }
 
 .navlist{
+    z-index: 101;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -145,7 +145,8 @@ a {
 }
 
 .goal:hover {
-  background-color: purple;
+  background-color: rgb(30, 240, 170);
+  transition: .5s;
   transform: scale(1.1);
 }
 
@@ -184,31 +185,29 @@ a {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     z-index: 2;
-    margin-top: 200px;
+    margin-top: -40px;
     width: 100px;
     height: 100px;
 }
 
 .bottom_img {
-    z-index: 1;
+    z-index: 0;
     width: 100%;
+    margin-top: -360px;
     margin-bottom: -10px;
 }
 
-.bottom {
-    margin-top: 1000px;
-}
-
 #create-goal-button {
+  font-family: 'Baloo Bhai', sans-serif;
   position: fixed;
-  right: 30px;
+  right: 47%;
   bottom: 30px;
-  height: 60px;
-  width: 60px;
+  height: 100px;
+  width: 100px;
   border: none;
   border-radius: 30px;
-  font-size: 30px;
-  background-color: #ff1010;
+  font-size: 50px;
+  background-color: rgb(100, 100, 100);
   color: #fff;
   cursor: pointer;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
@@ -216,13 +215,15 @@ a {
 
 #create-goal-button:hover,
 #create-goal-button:focus {
-  right: 27px;
-  bottom: 27px;
-  height: 66px;
-  width: 66px;
+  align: center;
+  right: 46.25%;
+  bottom: 22px;
+  height: 120px;
+  width: 120px;
   border-radius: 33px;
-  font-size: 36px;
-  background-color: #319df6;
+  font-size: 70px;
+  background-color: rgb(30, 240, 170);
+  transition: .5s;
 }
 
 #create-goal-button:focus {
@@ -345,6 +346,7 @@ a {
 
 
 .bottom-calendar {
+<<<<<<< HEAD
   height: 800px;
   display: flex;
   width: 1000px;
@@ -353,5 +355,16 @@ a {
   margin-top: 30px;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.85);
+=======
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#calendar{
+  height: 300px;
+  width: 1000px;
+  padding: 50px;
+>>>>>>> 6873b8e6f84d1dc193e9c8f080badb7c441a7f67
 
 }
