@@ -349,6 +349,120 @@ a {
   background-color: #087dde;
 }
 
+-------------------------------------
+#modal-backdrop2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+#create-goal-modal2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  overflow: scroll;
+}
+
+.modal-dialog2 {
+  width: auto;
+  max-width: 600px;
+  min-width: 350px;
+  min-height: 300px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.modal-header2 {
+  position: relative;
+  padding: 10px 20px;
+}
+
+.modal-header2 h3 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.modal-close-button2 {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.modal-body2 {
+  padding: 20px;
+}
+
+.goal-input-element2 {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.goal-input-element2 label {
+  font-weight: 600;
+  flex: 1 75px;
+  margin-right: 10px;
+}
+
+.goal-input-element2 input,
+.goal-input-element2 textarea {
+  flex: 6 200px;
+  padding: 8px;
+  font-size: 20px;
+  border: 1px solid #aaa;
+}
+
+.goal-input-element2 textarea {
+  min-height: 64px;
+}
+
+.modal-footer2 {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 20px 10px;
+}
+
+.modal-footer2 button {
+  font-size: 20px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.modal-footer2 .modal-cancel-button2:hover {
+  background-color: #eee;
+}
+
+.modal-footer2 .modal-accept-button2 {
+  background-color: #319df6;
+  color: #fff;
+}
+
+.modal-footer2 .modal-accept-button2:hover {
+  background-color: #087dde;
+}
+
+
+
+------------------------------------
 
 .bottom-calendar {
   display: flex;

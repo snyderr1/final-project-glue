@@ -1,5 +1,7 @@
 var modal = document.getElementById('create-goal-modal');
+var modal2 = document.getElementById('create-goal-modal2');
 var modalBackdrop = document.getElementById('modal-backdrop');
+var modalBackdrop2 = document.getElementById('modal-backdrop2');
 var modalButton = document.getElementById('create-goal-button');
 var modalCloseButton = document.getElementsByClassName('modal-close-button')[0];
 var modalCancelButton = document.getElementsByClassName('modal-cancel-button')[0];
@@ -12,13 +14,30 @@ modalCancelButton.addEventListener('click', closeModal);
 modalCreateButton.addEventListener('click', createNewGoal);
 
 for(var i = 0; i < goals.length; i++) {
-	goals[i].addEventListener('click', openModal);
+	goals[i].addEventListener('click', function(event) {
+		//console.log(event.target);
+		selectedGoal(event.target);
+	});
+}
+
+function selectedGoal(event) {
+	modalBackdrop2.style.display = 'block';
+	modal2.style.display = 'block';
+	var goalText = document.getElementsByClassName("goal-text");
+	var goalTextData = event.parentElement;
+	var test = goalTextData.getElementsByClassName('goal-text')[0].innerText;
+	var test2 = goalTextData.getElementsByClassName('goal-date')[0].innerText;
+	document.getElementById('goal-text-input').value = test;
+	document.getElementById('goal-attribution-input').value = test2;
+	var createButton = document.getElementsByClassName('modal-accept-button')[0];
+	if(createButton.addEventListener) {
+		console.log('hello');
+	}
 }
 
 function openModal() {
 	modalBackdrop.style.display = 'block';
 	modal.style.display = 'block';
-	console.log(goals[0].goalDate.value);
 }
 
 function closeModal() {
