@@ -351,14 +351,13 @@ a {
 
 
 .bottom-calendar {
+
+  height: 800px;
   display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
-#calendar{
-  height: 300px;
   width: 1000px;
-  padding: 50px;
-
+  border: 2px solid white;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.85);
 }
