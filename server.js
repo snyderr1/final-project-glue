@@ -58,11 +58,6 @@ app.get('/calendar', function(req, res){
 
 });
 
-app.get('/to-do', function(req, res){
-
-  res.status(200).render('to-do', {title: "to-do"});
-
-});
 
 MongoClient.connect(mongoUrl, function (err, client) {
     if (err){
