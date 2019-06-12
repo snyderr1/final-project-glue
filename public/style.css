@@ -547,7 +547,6 @@ a {
   background-color: rgb(30, 240, 170);
 
 }
------------------------------
 
 .bottom-calendar {
 
@@ -569,7 +568,21 @@ a {
 }
 
 
+.currentDate {
+  display: flex;
+  width: 12%;
+  height: 16%;
+  margin: 5px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: rgb(30, 240, 170);
+  font-family: 'Baloo Bhai', sans-serif;
+  color: white;
+  animation: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease;
 
+}
 
 .day {
   display: flex;
