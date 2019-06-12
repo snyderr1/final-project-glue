@@ -95,15 +95,16 @@ function openModal() {
 }
 
 function deleteGoal() {
-	var goalBox = goalSelected.parentElement;
-	var entireGoalBox = goalBox.parentElement;
-	console.log(entireGoalBox);
-	entireGoalBox.remove();
-	goalSelected = null;
+	// var goalBox = goalSelected.parentElement;
+	// var entireGoalBox = goalBox.parentElement;
+	// console.log(entireGoalBox);
+	// entireGoalBox.remove();
+	// goalSelected = null;
 	closeEditModal();
 }
 
 function editGoal() {
+
 	var newGoal = document.getElementById('goal-edit-text-input').value;
 	var newDate = document.getElementById('goal-edit-attribution-input').value;
 	var newGoalBox = goalSelected.parentElement;
@@ -114,6 +115,7 @@ function editGoal() {
 }
 
 function selectedGoal(event) {
+	console.log("here?");
 	modalBackdrop.style.display = 'block';
 	editModal.style.display = 'block';
 	var goalTextData = event.parentElement;
@@ -146,6 +148,34 @@ function createNewGoal() {
 		openModal();
 	}
 	else {
+		var postRequest = new XMLHttpRequest();
+		var requestURL = '/goals' + '/addGoal';
+
+		postRequest.open('POST', requestURL);
+
+	    var requestBody = JSON.stringify({
+	      goalText: textInput,
+	      goalDate: textDateInput
+	    });
+
+	    postRequest.addEventListener('load', function (event) {
+	      if (event.target.status === 200) {
+	        var goalTemplate = Handlebars.templates.goals;
+	        var newGoalHTML = goalTemplate({
+			  	goalText: textInput,
+  		      	goalDate: textDateInput
+	        });
+	        var goalContainer = document.querySelector('.goals-container');
+	        goalContainer.insertAdjacentHTML('beforeend', newGoalHTML);
+	      } else {
+	        alert("Error storing goal: " + event.target.response);
+	      }
+	    });
+
+	    postRequest.setRequestHeader('Content-Type', 'application/json');
+	    postRequest.send(requestBody);
+
+
 		insertNewGoal();
 	}
 }

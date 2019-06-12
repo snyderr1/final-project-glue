@@ -14,7 +14,7 @@ var mongoDBName = "cs290_whitbeyc";
 var mongoUrl = `mongodb://${mongoUser}:${mongoPassword}@${mongoHost}:${mongoPort}/${mongoDBName}`;
 var db = null;
 
-var goalsData = require('./goalData');
+//var goalsData = require('./goalData');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -61,11 +61,13 @@ app.post('/goals/addGoal', function(req, res, next){
             goalText: req.body.goalText,
             goalDate: req.body.goalDate
         };
+        console.log("== IT EXISTS");
         collection.insertOne(
-                { goalText: goalText},
-                { goalDate: goalDate},
+                { goalText: goal.goalText},
+                { goalDate: goal.goalDate},
                 function (err, result) {
                     if (err) {
+                        console.log("ERROR");
                         res.status(500).send({
                             error: "Error inserting goal into the database"
                         });
@@ -83,7 +85,27 @@ app.post('/goals/addGoal', function(req, res, next){
         res.status(400).send("Request needs a body with a Goal and Date");
     }
 });
+MongoClient.connect(mongoUrl, function (err, client) {
+    if (err){
+        throw err;
+    }
+    db = client.db(mongoDBName);
+    app.listen(port, function() {
+      console.log("== Server is listening on port", port);
+    });
+});
 
+app.get('/goals/delete/:id', function(req, res, next){
+  var name = req.params.id;
+  console.log("delete reqeuest recieved", name);
+  var collection = db.collection('goalData');
+  //db.collection('goalData').find({ goalText: req});
+    db.collection('goalData').deleteOne(
+       {
+         goalText: name
+       });
+       res.redirect("/goals");
+});
 
 app.get('/calendar', function(req, res, next){
   var months = ["january", "february", "march", "april",	"may", "june", "july", "august", "september", "october", "november", "december"];
@@ -93,15 +115,4 @@ app.get('/calendar', function(req, res, next){
 
 app.get('*', function(req, res, next){
   res.status(404).render('404', {title: "404"});
-}); 
-
-
-MongoClient.connect(mongoUrl, function (err, client) {
-    if (err){
-        throw err;
-    }
-    db = client.db(mongoDBName);
-    app.listen(port, function() {
-      console.log("== Server is listening on port", port);
-    });
 });
