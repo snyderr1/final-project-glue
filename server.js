@@ -61,11 +61,13 @@ app.post('/goals/addGoal', function(req, res, next){
             goalText: req.body.goalText,
             goalDate: req.body.goalDate
         };
+        console.log("== IT EXISTS");
         collection.insertOne(
-                { goalText: goalText},
-                { goalDate: goalDate},
+                { goalText: goal.goalText},
+                { goalDate: goal.goalDate},
                 function (err, result) {
                     if (err) {
+                        console.log("ERROR");
                         res.status(500).send({
                             error: "Error inserting goal into the database"
                         });
@@ -93,7 +95,7 @@ app.get('/calendar', function(req, res, next){
 
 app.get('*', function(req, res, next){
   res.status(404).render('404', {title: "404"});
-}); 
+});
 
 
 MongoClient.connect(mongoUrl, function (err, client) {
