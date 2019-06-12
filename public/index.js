@@ -7,14 +7,15 @@ var modalCreateButton = document.getElementsByClassName('modal-accept-button')[0
 var goals = document.getElementsByClassName('goals-container');
 var editModal = document.getElementById('edit-goal-modal');
 var editModalCloseButton = document.getElementsByClassName('modal-edit-close-button')[0];
-var editModalDeleteButton = document.getElementsByClassName('modal-edit-delete-button')[0];
+var editModalDeleteButton = document.getElementsByClassName('modal-delete-button')[0];
 var editModalEditButton = document.getElementsByClassName('modal-edit-button')[0];
 var goalSelected;
+var goalArray = document.getElementsByClassName('goal-content');
 
+console.log(goalArray);
 
-
-for(var i = 0; i < goals.length; i++) {
-	goals[i].addEventListener('click', function(event) {
+for(var i = 0; i < goalArray.length; i++) {
+	goalArray[i].addEventListener('click', function(event) {
 		goalSelected = event.target;
 		selectedGoal(event.target);
 	});
@@ -72,11 +73,21 @@ if(document.getElementById('site-title').textContent == "calendar") {
 	modalCreateButton.addEventListener('click', createNewGoal);
 	editModalCloseButton.addEventListener('click', closeEditModal);
 	editModalEditButton.addEventListener('click', editGoal);
+	editModalDeleteButton.addEventListener('click', deleteGoal);
 }
 function openModal() {
 	modalBackdrop.style.display = 'block';
 	modal.style.display = 'block';
 	console.log(goals[0].goalDate.value);
+}
+
+function deleteGoal() {
+	var goalBox = goalSelected.parentElement;
+	var entireGoalBox = goalBox.parentElement;
+	console.log(entireGoalBox);
+	entireGoalBox.remove();
+	goalSelected = null;
+	closeEditModal();
 }
 
 function editGoal() {
@@ -85,6 +96,7 @@ function editGoal() {
 	var newGoalBox = goalSelected.parentElement;
 	newGoalBox.getElementsByClassName("goal-text")[0].innerText = newGoal;
 	newGoalBox.getElementsByClassName("goal-date")[0].innerText = newDate;
+	goalSelected = null;
 	closeEditModal();
 }
 
