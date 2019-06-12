@@ -86,7 +86,7 @@ app.post('/goals/addGoal', function(req, res, next){
 
 
 app.get('/calendar', function(req, res, next){
-  var months = ["January", "February", "March", "April",	"May", "June", "July", "August", "September", "October", "November", "December"];
+  var months = ["january", "february", "march", "april",	"may", "june", "july", "august", "september", "october", "november", "december"];
   var temp = new Date();
   res.status(200).render('calendar', {title: months[temp.getMonth()]});
 });

@@ -10,7 +10,7 @@ var editModalCloseButton = document.getElementsByClassName('modal-edit-close-but
 var editModalDeleteButton = document.getElementsByClassName('modal-edit-delete-button')[0];
 var editModalEditButton = document.getElementsByClassName('modal-edit-button')[0];
 var goalSelected;
-var months = ["January", "February", "March", "April",	"May", "June", "July", "August", "September", "October", "November", "December"];
+var months = ["january", "february", "march", "april",	"may", "june", "july", "august", "september", "october", "november", "december"];
 
 
 for(var i = 0; i < goals.length; i++) {
@@ -38,14 +38,16 @@ function setMonth() {
 		}
 	}
 }
+
 function checkMonth(str) {
-	if(months.indexOf(str.toLowerCase()))  {
-		return true;
-	} else {
+	if(months.indexOf(str)==-1)  {
+		console.log(str);
 		return false;
+	} else {
+		return true;
 	}
 }
-
+console.log(months.indexOf("June"));
 function getDays(currentMonth) {
 	var days;
 	switch(currentMonth){
@@ -70,11 +72,9 @@ function getDays(currentMonth) {
 	return days;
 }
 
-
-if(checkMonth(document.getElementById('site-title').textContent )) {
+if(checkMonth(document.getElementById('site-title').textContent)) {
 	setMonth();
 } else {
-	console.log(document.getElementById('site-title'))
 	modalButton.addEventListener('click', openModal);
 	modalCloseButton.addEventListener('click', closeModal);
 	modalCancelButton.addEventListener('click', closeModal);
