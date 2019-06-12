@@ -63,8 +63,8 @@ app.post('/goals/addGoal', function(req, res, next){
         };
         console.log("== IT EXISTS");
         collection.insertOne(
-                { goalText: goal.goalText},
-                { goalDate: goal.goalDate},
+                { goalText: goal.goalText,
+                 goalDate: goal.goalDate},
                 function (err, result) {
                     if (err) {
                         console.log("ERROR");
