@@ -6,15 +6,65 @@ var modalCancelButton = document.getElementsByClassName('modal-cancel-button')[0
 var modalCreateButton = document.getElementsByClassName('modal-accept-button')[0];
 var goals = document.getElementsByClassName('goals-container');
 
-modalButton.addEventListener('click', openModal);
-modalCloseButton.addEventListener('click', closeModal);
-modalCancelButton.addEventListener('click', closeModal);
-modalCreateButton.addEventListener('click', createNewGoal);
+
+
 
 for(var i = 0; i < goals.length; i++) {
 	goals[i].addEventListener('click', openModal);
 }
 
+
+function setMonth() {
+	var calendar = document.getElementsByClassName('bottom-calendar')[0];
+	var temp = new Date();
+	var currentMonth = temp.getMonth();
+	var days = getDays(currentMonth);
+	var context = {
+		date: 0
+	}
+	for(i = 0; i < days; i++) {
+		context.date = i+1;
+		calendar.insertAdjacentHTML('beforeend', Handlebars.templates.day(context));
+	}
+}
+
+function getDays(currentMonth) {
+	var days;
+	console.log(currentMonth);
+	switch(currentMonth){
+		case 0:
+		case 2:
+		case 4:
+		case 6:
+		case 7:
+		case 9:
+		case 11:
+			days = 31;
+			break;
+		case 3:
+		case 5:
+		case 8:
+		case 10:
+			days = 30;
+			break;
+		default:
+			days = 28;
+	}
+	return days;
+}
+
+
+if(document.getElementById('site-title').textContent == "calendar") {
+	setMonth();
+
+} else {
+	console.log(document.getElementById('site-title'))
+	modalButton.addEventListener('click', openModal);
+	modalCloseButton.addEventListener('click', closeModal);
+	modalCancelButton.addEventListener('click', closeModal);
+	modalCreateButton.addEventListener('click', createNewGoal);
+
+}
 function openModal() {
 	modalBackdrop.style.display = 'block';
 	modal.style.display = 'block';
