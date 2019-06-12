@@ -168,7 +168,7 @@ function createNewGoal() {
 	        var goalContainer = document.querySelector('.goals-container');
 	        goalContainer.insertAdjacentHTML('beforeend', newGoalHTML);
 	      } else {
-	        alert("Error storing goal: " + event.target.response);
+	        //alert("Error storing goal: " + event.target.response);
 	      }
 	    });
 
