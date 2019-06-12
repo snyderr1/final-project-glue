@@ -402,6 +402,14 @@ a {
   background-color: rgb(30, 240, 170);
 
 }
+
+.class404{
+    font-family: 'Baloo Bhai', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: rgb(100, 100, 100);
+
+}
 -----------------------------
 #modal-backdrop {
   position: fixed;
