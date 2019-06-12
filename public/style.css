@@ -119,12 +119,14 @@ a {
 }
 
 .statement {
+    margin-top: 100px;
     animation: fadeIn;
     animation-duration: 1s;
     animation-timing-function: ease;
     color: white;
     font-family: 'Baloo Bhai', sans-serif;
     text-align: center;
+    font-size: 30px;
 
 }
 
@@ -452,11 +454,12 @@ a {
 .modal-header-edit {
   position: relative;
   padding: 10px 20px;
+
 }
 
 .modal-header-edit h3 {
   margin: 0;
-  font-size: 30px;
+  font-size: 50px;
   color: rgb(100, 100, 100);
 }
 
@@ -610,8 +613,14 @@ a {
 
 .modal-delete-button {
   border-radius: 5px;
-  background-color: rgba(250, 0, 0, 1);
+  background-color: rgb(100, 100, 100);
   border: 2px solid white;
   color: rgb(250, 250, 250);
   font-family: 'Baloo Bhai', sans-serif;
+}
+
+.modal-delete-button:hover {
+  background-color: rgba(250, 0, 0, 1);
+
+  cursor: pointer;
 }

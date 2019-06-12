@@ -21,6 +21,8 @@ templates['goals'] = template({"compiler":[7,">= 4.0.0"],"main":function(contain
     + alias4(((helper = (helper = helpers.goalText || (depth0 != null ? depth0.goalText : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"goalText","hash":{},"data":data}) : helper)))
     + "\n    </p>\n    <p class = \"goal-date\">\n      <a href = \"#\">"
     + alias4(((helper = (helper = helpers.goalDate || (depth0 != null ? depth0.goalDate : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"goalDate","hash":{},"data":data}) : helper)))
-    + "</a>\n    </p>\n  </div>\n</article>\n";
+    + "</a>\n    </p>\n    <form action= \"goals/delete/"
+    + alias4(container.lambda((depth0 != null ? depth0.goalText : depth0), depth0))
+    + "\" method = \"delete\">\n      <button type=\"submit\" class=\"modal-delete-button\">delete</button>\n    </form>\n  </div>\n</article>\n\n    \n";
 },"useData":true});
 })();
