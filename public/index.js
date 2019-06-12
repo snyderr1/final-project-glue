@@ -146,6 +146,34 @@ function createNewGoal() {
 		openModal();
 	}
 	else {
+		var postRequest = new XMLHttpRequest();
+		var requestURL = '/goals' + '/addGoal';
+
+		postRequest.open('POST', requestURL);
+
+	    var requestBody = JSON.stringify({
+	      goalText: textInput,
+	      goalDate: textDateInput
+	    });
+
+	    postRequest.addEventListener('load', function (event) {
+	      if (event.target.status === 200) {
+	        var goalTemplate = Handlebars.templates.goals;
+	        var newGoalHTML = goalTemplate({
+			  	goalText: textInput,
+  		      	goalDate: textDateInput
+	        });
+	        var goalContainer = document.querySelector('.goals-container');
+	        goalContainer.insertAdjacentHTML('beforeend', newGoalHTML);
+	      } else {
+	        alert("Error storing goal: " + event.target.response);
+	      }
+	    });
+
+	    postRequest.setRequestHeader('Content-Type', 'application/json');
+	    postRequest.send(requestBody);
+
+
 		insertNewGoal();
 	}
 }
