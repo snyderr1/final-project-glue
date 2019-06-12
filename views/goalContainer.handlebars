@@ -30,6 +30,31 @@
         <button type="button" class="modal-cancel-button">cancel</button>
         <button type="button" class="modal-accept-button">create goal</button>
       </div>
+    </div>
+  </div>
 
+      <div id="edit-goal-modal" class="hidden">
+        <div class="modal-dialog-edit">
 
+          <div class="modal-header-edit">
+            <h3>Do you want to edit or delete a goal?</h3>
+            <button type="button" class="modal-edit-close-button">&times;</button>
+          </div>
 
+          <div class="modal-edit-body">
+            <div class="goal-edit-input-element">
+              <label for="goal-edit-text-input">goal</label>
+              <textarea id="goal-edit-text-input"></textarea>
+            </div>
+            <div class="goal-edit-input-element">
+              <label for="goal-edit-attribution-input">date</label>
+              <input type="text" id="goal-edit-attribution-input">
+            </div>
+          </div>
+
+          <div class="modal-edit-footer">
+            <button type="button" class="modal-delete-button">delete</button>
+            <button type="button" class="modal-edit-button">edit goal</button>
+          </div>
+        </div>
+      </div>

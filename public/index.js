@@ -5,12 +5,19 @@ var modalCloseButton = document.getElementsByClassName('modal-close-button')[0];
 var modalCancelButton = document.getElementsByClassName('modal-cancel-button')[0];
 var modalCreateButton = document.getElementsByClassName('modal-accept-button')[0];
 var goals = document.getElementsByClassName('goals-container');
-
+var editModal = document.getElementById('edit-goal-modal');
+var editModalCloseButton = document.getElementsByClassName('modal-edit-close-button')[0];
+var editModalDeleteButton = document.getElementsByClassName('modal-edit-delete-button')[0];
+var editModalEditButton = document.getElementsByClassName('modal-edit-button')[0];
+var goalSelected;
 
 
 
 for(var i = 0; i < goals.length; i++) {
-	goals[i].addEventListener('click', openModal);
+	goals[i].addEventListener('click', function(event) {
+		goalSelected = event.target;
+		selectedGoal(event.target);
+	});
 }
 
 
@@ -63,7 +70,8 @@ if(document.getElementById('site-title').textContent == "calendar") {
 	modalCloseButton.addEventListener('click', closeModal);
 	modalCancelButton.addEventListener('click', closeModal);
 	modalCreateButton.addEventListener('click', createNewGoal);
-
+	editModalCloseButton.addEventListener('click', closeEditModal);
+	editModalEditButton.addEventListener('click', editGoal);
 }
 function openModal() {
 	modalBackdrop.style.display = 'block';
@@ -71,11 +79,37 @@ function openModal() {
 	console.log(goals[0].goalDate.value);
 }
 
+function editGoal() {
+	var newGoal = document.getElementById('goal-edit-text-input').value;
+	var newDate = document.getElementById('goal-edit-attribution-input').value;
+	var newGoalBox = goalSelected.parentElement;
+	newGoalBox.getElementsByClassName("goal-text")[0].innerText = newGoal;
+	newGoalBox.getElementsByClassName("goal-date")[0].innerText = newDate;
+	closeEditModal();
+}
+
+function selectedGoal(event) {
+	modalBackdrop.style.display = 'block';
+	editModal.style.display = 'block';
+	var goalTextData = event.parentElement;
+	var goalText = goalTextData.getElementsByClassName('goal-text')[0].innerText;
+	var dateText = goalTextData.getElementsByClassName('goal-date')[0].innerText;
+	document.getElementById('goal-edit-text-input').value = goalText;
+	document.getElementById('goal-edit-attribution-input').value = dateText;
+}
+
 function closeModal() {
 	modalBackdrop.style.display = 'none';
 	modal.style.display = 'none';
 	document.getElementById('goal-attribution-input').value = "";
 	document.getElementById('goal-text-input').value = "";
+}
+
+function closeEditModal() {
+	modalBackdrop.style.display = 'none';
+	editModal.style.display = 'none';
+	document.getElementById('goal-edit-attribution-input').value = "";
+	document.getElementById('goal-edit-text-input').value = "";
 }
 
 //end of modal functions//
