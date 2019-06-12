@@ -95,15 +95,16 @@ function openModal() {
 }
 
 function deleteGoal() {
-	var goalBox = goalSelected.parentElement;
-	var entireGoalBox = goalBox.parentElement;
-	console.log(entireGoalBox);
-	entireGoalBox.remove();
-	goalSelected = null;
+	// var goalBox = goalSelected.parentElement;
+	// var entireGoalBox = goalBox.parentElement;
+	// console.log(entireGoalBox);
+	// entireGoalBox.remove();
+	// goalSelected = null;
 	closeEditModal();
 }
 
 function editGoal() {
+
 	var newGoal = document.getElementById('goal-edit-text-input').value;
 	var newDate = document.getElementById('goal-edit-attribution-input').value;
 	var newGoalBox = goalSelected.parentElement;
@@ -114,6 +115,7 @@ function editGoal() {
 }
 
 function selectedGoal(event) {
+	console.log("here?");
 	modalBackdrop.style.display = 'block';
 	editModal.style.display = 'block';
 	var goalTextData = event.parentElement;
