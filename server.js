@@ -91,7 +91,7 @@ app.get('/calendar', function(req, res, next){
 
 app.get('*', function(req, res, next){
   res.status(404).render('404', {title: "404"});
-});
+}); 
 
 
 MongoClient.connect(mongoUrl, function (err, client) {
