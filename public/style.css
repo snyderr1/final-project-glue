@@ -189,6 +189,8 @@ a {
   margin-top: 8px;
   text-align: right;
   font-weight: bold;
+  font-size: 15px;
+  color: white;
 }
 
 .goal-content p{
@@ -400,7 +402,152 @@ a {
   background-color: rgb(30, 240, 170);
 
 }
+-----------------------------
+#modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.85);
+}
 
+#edit-goal-modal {
+  position: fixed;
+  font-family: 'Baloo Bhai', sans-serif;
+  animation: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-dialog-edit {
+  width: auto;
+  max-width: 600px;
+  min-width: 350px;
+  min-height: 300px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.modal-header-edit {
+  position: relative;
+  padding: 10px 20px;
+}
+
+.modal-header-edit h3 {
+  margin: 0;
+  font-size: 30px;
+  color: rgb(100, 100, 100);
+}
+
+.modal-edit-close-button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.modal-edit-body {
+  padding: 20px;
+}
+
+.goal-edit-input-element {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin: 10px 0;
+  font-size: 40px;
+  color: rgb(100, 100, 100);
+}
+
+.goal-edit-input-element label {
+  font-weight: 600;
+  flex: 1 75px;
+  margin-right: 5px;
+}
+
+.goal-edit-input-element input,
+.goal-edit-input-element textarea {
+  flex: 6 200px;
+  padding: 8px;
+  font-size: 20px;
+  border: 1px solid rgb(100, 100, 100);
+  color: rgb(100, 100, 100);
+  min-height: 20px;
+}
+
+.goal-edit-input-element input:focus {
+    outline-color: rgb(30, 240, 170);
+}
+
+#goal-edit-text-input{
+    min-height: 50px;
+    align-items: center;
+    color: rgb(100, 100, 100);
+}
+
+#goal-edit-text-input:focus {
+    outline-color: rgb(30, 240, 170);
+}
+
+
+
+.modal-edit-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 20px 10px;
+}
+
+.modal-edit-footer button {
+  font-size: 20px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.modal-edit-footer .modal-delete-button {
+    font-family: 'Baloo Bhai', sans-serif;
+    color: white;
+    background-color: rgb(100, 100, 100);
+}
+
+.modal-edit-footer .modal-delete-button:hover {
+  color: rgb(100, 100, 100);
+  background-color: white;
+
+}
+
+.modal-edit-footer .modal-edit-button {
+    font-family: 'Baloo Bhai', sans-serif;
+    background-color: rgb(100, 100, 100);
+    color: white;
+}
+
+.modal-edit-footer .modal-edit-button:hover {
+  background-color: rgb(30, 240, 170);
+
+}
+-----------------------------
 
 .bottom-calendar {
 
