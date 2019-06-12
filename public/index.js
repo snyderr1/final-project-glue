@@ -10,9 +10,13 @@ var editModalCloseButton = document.getElementsByClassName('modal-edit-close-but
 var editModalDeleteButton = document.getElementsByClassName('modal-delete-button')[0];
 var editModalEditButton = document.getElementsByClassName('modal-edit-button')[0];
 var goalSelected;
+
+var months = ["january", "february", "march", "april",	"may", "june", "july", "august", "september", "october", "november", "december"];
+
 var goalArray = document.getElementsByClassName('goal-content');
 
 console.log(goalArray);
+
 
 for(var i = 0; i < goalArray.length; i++) {
 	goalArray[i].addEventListener('click', function(event) {
@@ -32,13 +36,25 @@ function setMonth() {
 	}
 	for(i = 0; i < days; i++) {
 		context.date = i+1;
-		calendar.insertAdjacentHTML('beforeend', Handlebars.templates.day(context));
+		if(temp.getDate() == context.date) {
+			calendar.insertAdjacentHTML('beforeend', Handlebars.templates.date(context));
+		} else {
+			calendar.insertAdjacentHTML('beforeend', Handlebars.templates.day(context));
+		}
 	}
 }
 
+function checkMonth(str) {
+	if(months.indexOf(str)==-1)  {
+		console.log(str);
+		return false;
+	} else {
+		return true;
+	}
+}
+console.log(months.indexOf("June"));
 function getDays(currentMonth) {
 	var days;
-	console.log(currentMonth);
 	switch(currentMonth){
 		case 0:
 		case 2:
@@ -61,12 +77,9 @@ function getDays(currentMonth) {
 	return days;
 }
 
-
-if(document.getElementById('site-title').textContent == "calendar") {
+if(checkMonth(document.getElementById('site-title').textContent)) {
 	setMonth();
-
 } else {
-	console.log(document.getElementById('site-title'))
 	modalButton.addEventListener('click', openModal);
 	modalCloseButton.addEventListener('click', closeModal);
 	modalCancelButton.addEventListener('click', closeModal);
