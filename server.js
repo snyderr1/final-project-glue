@@ -21,8 +21,8 @@ app.set('view engine', 'handlebars');
 
 app.use(bodyParser.json());
 
+
 app.get(['/home', '/'], function(req, res){
-  console.log('check get');
   res.status(200).render('home', {title: "glue"});
 
 });
@@ -49,14 +49,47 @@ app.get('/goals', function(req, res, next) {
     });
   }
   });
+
+});
+
+app.post('/goals/addGoal', function(req, res, next){
+    console.log("== IN POST");
+    if (req.body && req.body.goalText && req.body.goalDate){
+        console.log("== IT EXISTS");
+        var collection = db.collection('goalData');
+        var goal = {
+            goalText: req.body.goalText,
+            goalDate: req.body.goalDate
+        };
+        collection.insertOne(
+                { goalText: goalText},
+                { goalDate: goalDate},
+                function (err, result) {
+                    if (err) {
+                        res.status(500).send({
+                            error: "Error inserting goal into the database"
+                        });
+                    } else {
+                        console.log("== update result:", result);
+                        if (result.matchedCount > 0) {
+                            res.status(200).send("Success");
+                        } else {
+                            next();
+                        }
+                    }
+                }
+        );
+    } else {
+        res.status(400).send("Request needs a body with a Goal and Date");
+    }
 });
 
 
-app.get('/calendar', function(req, res){
-
+app.get('/calendar', function(req, res, next){
   res.status(200).render('calendar', {title: "calendar"});
-
 });
+
+
 
 
 MongoClient.connect(mongoUrl, function (err, client) {
