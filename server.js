@@ -53,8 +53,9 @@ app.get('/goals', function(req, res, next) {
 
 
 app.get('/calendar', function(req, res){
-
-  res.status(200).render('calendar', {title: "calendar"});
+  var months = ["January", "February", "March", "April",	"May", "June", "July", "August", "September", "October", "November", "December"];
+  var temp = new Date();
+  res.status(200).render('calendar', {title: months[temp.getMonth()]});
 
 });
 
